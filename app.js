@@ -11,7 +11,7 @@ app.set('view engine', 'hbs');
 app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: "Home Page",
-        pageBody: "Welcome to Handle Bars",
+        pageBody: "Welcome to Dream World !!!",
         copyRight: new Date().getFullYear()
     });
 });
@@ -28,9 +28,8 @@ app.get('/details', (req, res) => {
     res.send({
         name: 'Sudhir',
         address: [
-            'Nand Gram',
-            'Ghaziabad',
-            'Uttar Pradesh'
+            'Uttar Pradesh',
+            'India'
         ]
     });
 });
