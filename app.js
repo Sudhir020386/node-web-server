@@ -1,7 +1,6 @@
-console.log("hello Sudhir");
-
 const express = require('express');
 const hbs = require('hbs');
+const port= process.env.port || 3000;
 
 var app = express();
 
@@ -38,4 +37,6 @@ app.get('/contact', (req, res) => {
 
 });
 
-app.listen(30000);
+app.listen(port,() =>{
+    console.log(`Server is started at port ${port}`);
+});
