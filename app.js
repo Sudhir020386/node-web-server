@@ -1,10 +1,10 @@
 const express = require('express');
 const hbs = require('hbs');
-const port= process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 var app = express();
 
-hbs.registerPartials(__dirname +'/views/partials');
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
@@ -23,6 +23,13 @@ app.get('/about', (req, res) => {
     );
 });
 
+app.get('/productlist', (req, res) => {
+    res.render('productlist.hbs', {
+        pageTitle: "Product Details",
+        copyRight: new Date().getFullYear()
+    });
+});
+
 app.get('/details', (req, res) => {
     res.send({
         name: 'Sudhir',
@@ -37,6 +44,6 @@ app.get('/contact', (req, res) => {
 
 });
 
-app.listen(port,() =>{
+app.listen(port, () => {
     console.log(`Server is started at port ${port}`);
 });
